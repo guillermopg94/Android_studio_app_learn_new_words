@@ -1,0 +1,35 @@
+package com.example.vocabulary;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class opcionesmenu extends AppCompatActivity {
+
+    private static Button traduccion, pronunciacion;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.opciones);
+    traduccion = findViewById(R.id.button2);
+        pronunciacion = findViewById(R.id.button3);
+        
+        traduccion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent downloadIntent = new Intent(opcionesmenu.this, mostrar.class);
+                startActivity(downloadIntent);
+            }
+        });
+        pronunciacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent downloadIntent = new Intent(opcionesmenu.this, pronunciation.class);
+                startActivity(downloadIntent);
+            }
+        });
+    }
+}
