@@ -1,0 +1,105 @@
+package com.example.vocabulary;
+
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class pronunciation extends AppCompatActivity {
+    private static ImageButton Kerfuffleb, Ragamuffinb,
+            Gobbledygookb, Discombobulateb, Frankenfoodb,
+            Lackadaisicalb, Woebegoneb, Lollygagb, Curmudgeonb;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.pronunciation);
+
+        Kerfuffleb = findViewById(R.id.imageButton);
+        Ragamuffinb = findViewById(R.id.imageButton4);
+        Gobbledygookb = findViewById(R.id.imageButton5);
+        Discombobulateb = findViewById(R.id.imageButton3);
+        Frankenfoodb = findViewById(R.id.imageButton8);
+        Lackadaisicalb = findViewById(R.id.imageButton6);
+        Woebegoneb = findViewById(R.id.button_repeat);
+        Lollygagb = findViewById(R.id.imageButton7);
+        Curmudgeonb = findViewById(R.id.imageButton2);
+
+        Kerfuffleb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Ragamuffinb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Gobbledygookb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Discombobulateb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Frankenfoodb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Lackadaisicalb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Woebegoneb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Lollygagb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Curmudgeonb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        
+        MediaPlayer Kerfufflesound = MediaPlayer.create(this, R.raw.kerfuffle);
+        MediaPlayer Ragamuffinsound = MediaPlayer.create(this, R.raw.ragamuffin);
+        MediaPlayer Gobbledygooksound = MediaPlayer.create(this, R.raw.gobbledygook);
+        MediaPlayer Discombobulatesound = MediaPlayer.create(this, R.raw.discombobulate);
+        MediaPlayer Frankenfoodsound = MediaPlayer.create(this, R.raw.frankenfood);
+        MediaPlayer Lackadaisicalsound = MediaPlayer.create(this, R.raw.lackadaisical);
+        MediaPlayer Woebegonesound = MediaPlayer.create(this, R.raw.woebegone);
+        MediaPlayer Lollygagsound = MediaPlayer.create(this, R.raw.lollygag);
+        MediaPlayer Curmudgeonsound = MediaPlayer.create(this, R.raw.curmudgeon);
+
+        Kerfuffleb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Kerfufflesound.start();
+            }
+        });
+        Ragamuffinb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Ragamuffinsound.start();
+            }
+        });
+        Gobbledygookb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Gobbledygooksound.start();
+            }
+        });
+        Discombobulateb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Discombobulatesound.start();
+            }
+        });
+        Frankenfoodb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Frankenfoodsound.start();
+            }
+        });
+        Lackadaisicalb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Lackadaisicalsound.start();
+            }
+        });
+        Woebegoneb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Woebegonesound.start();
+            }
+        });
+        Lollygagb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Lollygagsound.start();
+            }
+        });
+        Curmudgeonb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Curmudgeonsound.start();
+            }
+        });
+    }
+}
