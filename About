@@ -1,0 +1,21 @@
+package com.example.vocabulary;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+public class about extends AppCompatActivity {
+    private static TextView texto;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        setContentView(R.layout.about);
+        
+        texto = (TextView)findViewById(R.id.textView2);
+        
+        texto.setText("Developed by: Guillermo Paton in 2021." +
+                "This application will show some of the most curious" +
+                " words in English with a traduction to spanish and with " +
+                "the pronuntiation of the word. We hope you enjoy it and can" +
+                " learn something new. Thanks");
+    }
+}
