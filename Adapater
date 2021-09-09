@@ -1,0 +1,73 @@
+package com.example.vocabulary;
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+public class adaptador extends BaseAdapter {
+    private ArrayList<Entidad> listEntidad;
+    private Context context;
+    private LayoutInflater inflater;
+
+    public adaptador(Context context, ArrayList<Entidad> listEntidad) {
+        this.context = context;
+        this.listEntidad = listEntidad;
+    }
+    //clases a implementar del aseadaptador
+    @Override
+    public int getCount() {
+        return listEntidad.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return listEntidad.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        
+        //creo objeto de tipo entidad con la posicion del arraylist
+        final Entidad entidad = (Entidad) getItem(position); 
+
+
+        convertView = LayoutInflater.from(context).inflate(R.layout.item, null);
+        //declaro los elementos del xml
+        ImageView imgFoto = (ImageView) convertView.findViewById(R.id.imgFoto);
+        TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
+        TextView tvContenido = (TextView) convertView.findViewById(R.id.tvContenido);
+
+
+        //seteo las imagenes cargandolas del objeto entidad
+        imgFoto.setImageResource(entidad.getImgFoto());
+        //seteo el titulo cargandolas del objeto entidad
+        tvTitulo.setText(entidad.getTitulo());
+        //seteo el texto cargandolas del objeto entidad
+        tvContenido.setText(entidad.getContenido());
+
+
+        //al hacer click sobre el listview
+        convertView.setOnClickListener(new View.OnClickListener() { 
+            @Override
+            public void onClick(View v) {
+                //paso a la actividad cliklista
+                Intent i = new Intent(context, clickista.class);
+                //añado a ese intent el elemnto entidad con el nombre item
+                i.putExtra("item", entidad);
+                //empiezo el proceso de cambiar de context a clicklista
+                context.startActivity(i);
+            }
+        });
+        return convertView; //muestra todo el listview
+    }
+}
