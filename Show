@@ -1,0 +1,48 @@
+package com.example.vocabulary;
+import android.os.Bundle;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+public class mostrar extends AppCompatActivity {
+    
+    private ListView lvItems;
+    private com.example.vocabulary.adaptador adaptador;
+    //array list con objetos de entidad
+    private ArrayList<Entidad> arrayEntidad = new ArrayList<>(); 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.mostrar);
+
+        lvItems = (ListView) findViewById(R.id.lvItems); //declaro listview
+        //metodo para rellenar y mostrar el arraylist en el listview
+        llenarItems(); 
+    }
+    private void llenarItems(){
+        arrayEntidad.add(new Entidad(R.drawable.alboroto, "Kerfuffle ", "Means \"Alboroto\". \n" +
+                "The word refers to the scandal that people with different points of view generally make. "));
+        arrayEntidad.add(new Entidad(R.drawable.desharrapado, "Ragamuffin", "Means \"Desharrapado\"." +
+                " comes from the English used in the Middle Ages"));
+        arrayEntidad.add(new Entidad(R.drawable.galimatias, "Gobbledygook", "Means  \"Galimatías\"." +
+                " Think of a turkey. What sound does it make? Sounds like: \"gobble, gobble, gobble\"? This is precisely where this word comes from!"));
+        arrayEntidad.add(new Entidad(R.drawable.desconcertar, "Discombobulate", "Means \"Desconcentrar\"." +
+                " This word has been used since the mid-19th century; mostly in a funny way. "));
+        arrayEntidad.add(new Entidad(R.drawable.cascarrabias, "Curmudgeon", "Means  \"Cascarrabias\". " +
+                "This word dates back to at least the 16th century and has been used for a long time."));
+        arrayEntidad.add(new Entidad(R.drawable.transgenicos, "Frankenfood", "Means  \"Alimentos  modificados genéticamente\"." +
+                " This word is very new compared to the others on the list. Frankenfood (noun) was born in the 1990s."));
+        arrayEntidad.add(new Entidad(R.drawable.languido, "Lackadaisical", "Means \"Lánguido\"." +
+                " This term has been used since the 18th century, although it is not clear where it came from. "));
+        arrayEntidad.add(new Entidad(R.drawable.angustiado, "Woebegone", "Means \"Angustiado\". " +
+                "This term comes from the English that was used in the Middle Ages. "));
+        arrayEntidad.add(new Entidad(R.drawable.perder, "Lollygag", "Means \"Perder tiempo\"." +
+                " This word has been used since the 19th century and no one really knows where it came from. "));
+        //creo nuevo adaptador con este array list
+        adaptador = new adaptador(this, arrayEntidad);
+        //inserto el adaptador con los elementos del arraylist
+        lvItems.setAdapter(adaptador); 
+    }
+}
