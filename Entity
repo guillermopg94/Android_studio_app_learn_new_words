@@ -1,0 +1,26 @@
+package com.example.vocabulary;
+import java.io.Serializable;
+class Entidad implements Serializable {
+
+    private int imgFoto;
+    private String titulo;
+    private String contenido;
+
+    public Entidad(int imgFoto, String titulo, String contenido) {  //objeto entidad. recoje los elementos que le pasas
+        this.imgFoto = imgFoto;
+        this.titulo = titulo;
+        this.contenido = contenido;
+    }
+
+    public int getImgFoto() {
+        return imgFoto;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+}
