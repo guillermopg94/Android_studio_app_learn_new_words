@@ -1,0 +1,23 @@
+package com.example.vocabulary;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+public class help extends AppCompatActivity {
+    private static TextView texto;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.help);
+        texto = (TextView)findViewById(R.id.textView);
+        
+    texto.setText("This is a very simple application. " +
+            "After the first screen we will find another" +
+            " with two options, one on each button. It will" +
+            " lead you to the Spanish translation of the word " +
+            "and will give you a brief description of its etymology. " +
+            "The other button will direct you to a screen where, " +
+            "by pressing the corresponding button," +
+            " it will play a sound with the pronunciation of said word." +
+            " Thank you.");
+    }
+}
